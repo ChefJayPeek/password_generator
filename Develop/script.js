@@ -53,9 +53,13 @@ function generatePassword() {
     // Validate there is some input
     if (!passwordLength) {
         alert("You must enter a number!");
+        // Reload page because of improper user input
+        location.reload();
         // Validate input between 8 and 128 
     } else if (passwordLength < 8 || passwordLength > 128){
         passwordLength = parseInt(prompt("You must enter a number between 8 and 128!"));
+        // Reload page because of improper user input
+        location.reload();
     } else {
         // Get user choices for types of characters in the password
         lowerYes = confirm("Password will contain Lowercase?");
@@ -66,7 +70,9 @@ function generatePassword() {
 
     // Validate there is a at least one choice
     if (!lowerYes && !upperYes && !charYes && !numYes) {
-        choice = alert("You have to pick something!")
+        choice = alert("You have to pick something!");
+        // Reload page because of improper user input
+        location.reload();
     }
 
     // All possible character types
